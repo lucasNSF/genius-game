@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+/* Configurações da página */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(#427de3, #47bbf0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100%;
+}
+
+/* Cabeçalho */
+
+header {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3.8rem;
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: 2px 2px #000;
+}
+
+/* Jogo */
+
+.main-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: white;
+}
+
+#start {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1.7rem;
+  width: 10ch;
+  padding: 1rem 0;
+  top: 7.3rem;
+  left: 5rem;
+}
+
+#start:hover {
+  cursor: pointer;
+}
+
+#start:disabled {
+  cursor: initial;
+}
+
+.genius {
+  display: grid;
+  grid-template-areas: 'blue red' 'yellow green';
+  grid-gap: 10px;
+  height: 450px;
+  width: 500px;
+  border-radius: 50%;
+}
+
+.blue {
+  background-color: darkblue;
+  border: 2px solid rgb(114, 114, 253);
+  grid-area: blue;
+  border-top-left-radius: 100%;
+}
+
+.red {
+  background-color: darkred;
+  border: 2px solid rgb(243, 100, 100);
+  grid-area: red;
+  border-top-right-radius: 100%;
+}
+
+.yellow {
+  background-color: rgb(189, 189, 5);
+  border: 2px solid rgb(250, 250, 129);
+  grid-area: yellow;
+  border-bottom-left-radius: 100%;
+}
+
+.green {
+  background-color: rgb(1, 94, 1);
+  border: 2px solid rgb(139, 248, 139);
+  grid-area: green;
+  border-bottom-right-radius: 100%;
+}
+
+/* Rodapé */
+
+footer {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+li {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+#linkedin {
+  margin-left: 1rem;
+}
+
+a {
+  color: black;
+}
+
+/* Classes Javascript */
+
+.selected {
+  opacity: 0.4;
+}
+
+button:enabled {
+  cursor: pointer;
+}
