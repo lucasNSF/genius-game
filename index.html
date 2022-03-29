@@ -5,27 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="brain.png" type="image/png">
     <script
       src="https://kit.fontawesome.com/7ed22bcdfc.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="scripts/elements.js" defer></script>
+    <script type="module" src="scripts/animations.js" defer></script>
+    <script type="module" src="scripts/main.js" defer></script>
     <title>Are you a Genius? - Memory Game</title>
   </head>
   <body>
     <header>
-      <h1>Genius Game</h1>
+      <h1>
+        Genius Game
+        <div id="border"></div>
+      </h1>
     </header>
     <main>
+      <section class="modal m-lose hidden">
+        <section class="modal-content">
+          <p>Oh não! Esta não é a sequência correta...</p>
+          <button class="continue" id="lose-btn">Continuar</button>
+        </section>
+      </section>
+
+      <section class="modal m-win hidden">
+        <section class="modal-content">
+          <p>
+            Parabéns, você acertou a sequência! <br />
+            Agora vai ficar mais difícil...
+          </p>
+          <button class="continue" id="win-btn">Continuar</button>
+        </section>
+      </section>
+
       <section class="main-game">
         <section class="genius">
-          <button class="blue" data-codeColor="0" disabled></button>
-          <button class="red" data-codeColor="1" disabled></button>
-          <button class="yellow" data-codeColor="2" disabled></button>
-          <button class="green" data-codeColor="3" disabled></button>
+          <button class="btn-1" data-codeColor="0" disabled></button>
+          <button class="btn-2" data-codeColor="1" disabled></button>
+          <button class="btn-3" data-codeColor="2" disabled></button>
+          <button class="btn-4" data-codeColor="3" disabled></button>
         </section>
         <div class="circle">
-          <button id="start">Start</button>
+          <button id="start">Start Game</button>
         </div>
+      </section>
+
+      <section class="audios">
+        <audio src="sounds/btn-1.mp3" data-code="0"></audio>
+        <audio src="sounds/btn-2.mp3" data-code="1"></audio>
+        <audio src="sounds/btn-3.mp3" data-code="2"></audio>
+        <audio src="sounds/btn-4.mp3" data-code="3"></audio>
       </section>
     </main>
     <footer>
@@ -43,6 +74,5 @@
         </li>
       </ul>
     </footer>
-    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

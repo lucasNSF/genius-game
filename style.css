@@ -14,24 +14,33 @@ html {
 }
 
 body {
-  background: linear-gradient(#427de3, #47bbf0);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #100912;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
+  color: white;
 }
 
 /* Cabeçalho */
 
 header {
-  padding: 2rem;
+  margin: 2rem 0 5rem 0;
+  text-align: center;
 }
 
 h1 {
+  position: relative;
+  display: inline-block;
   font-size: 3.8rem;
-  text-align: center;
-  color: whitesmoke;
-  text-shadow: 2px 2px #000;
+  color: #ec66ff;
+  font-style: italic;
+  text-shadow: 2px 1px #fce6ff;
+}
+
+div#border {
+  width: 20%;
+  position: absolute;
+  border-bottom: 2px solid white;
+  transition: 0.5s;
 }
 
 /* Jogo */
@@ -45,10 +54,10 @@ h1 {
 
 .circle {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 100%;
-  background-color: white;
+  background-color: #100912;
 }
 
 #start {
@@ -56,65 +65,81 @@ h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 1.7rem;
-  width: 10ch;
+  width: 15ch;
   padding: 1rem 0;
-  top: 7.3rem;
-  left: 5rem;
+  top: 10rem;
+  left: 4.5rem;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  color: black;
 }
 
 #start:hover {
   cursor: pointer;
+  background-color: #A100B6;
+  color: white;
+  border: 2px solid #e94dff;
 }
 
 #start:disabled {
-  cursor: initial;
+  display: none;
 }
 
 .genius {
   display: grid;
-  grid-template-areas: 'blue red' 'yellow green';
-  grid-gap: 10px;
+  grid-template-areas: 'btn-1 btn-2' 'btn-3 btn-4';
+  grid-gap: 20px;
   height: 450px;
   width: 500px;
   border-radius: 50%;
 }
 
-.blue {
-  background-color: darkblue;
-  border: 2px solid rgb(114, 114, 253);
-  grid-area: blue;
+button {
+  transition: 0.4s;
+}
+
+.genius button {
+  opacity: 0;
+}
+
+.btn-1 {
+  background-color: #700080;
+  border: 4px solid #A100B6;
+  grid-area: btn-1;
   border-top-left-radius: 100%;
 }
 
-.red {
-  background-color: darkred;
-  border: 2px solid rgb(243, 100, 100);
-  grid-area: red;
+.btn-2 {
+  background-color: #e94dff;
+  border: 4px solid #ED66FF;
+  grid-area: btn-2;
   border-top-right-radius: 100%;
 }
 
-.yellow {
-  background-color: rgb(189, 189, 5);
-  border: 2px solid rgb(250, 250, 129);
-  grid-area: yellow;
+.btn-3 {
+  background-color: #f299ff;
+  border: 4px solid #F3A8FF;
+  grid-area: btn-3;
   border-bottom-left-radius: 100%;
 }
 
-.green {
-  background-color: rgb(1, 94, 1);
-  border: 2px solid rgb(139, 248, 139);
-  grid-area: green;
+.btn-4 {
+  background-color: #43004c;
+  border: 4px solid #7A008A;
+  grid-area: btn-4;
   border-bottom-right-radius: 100%;
 }
 
 /* Rodapé */
 
 footer {
-  margin: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 footer p {
@@ -133,7 +158,12 @@ li {
 }
 
 a {
-  color: black;
+  color: white;
+  transition: 0.4s;
+}
+
+a:hover {
+  color: #A900BF;
 }
 
 /* Classes Javascript */
@@ -142,6 +172,80 @@ a {
   opacity: 0.4;
 }
 
+.btn-1-focus {
+  border: 4px solid #E416FF;
+  background-color: #A100B6;
+  box-shadow: 0 0 10px #E416FF;
+}
+
+.btn-2-focus {
+  border: 4px solid #F07CFF;
+  background-color: #ED66FF;
+  box-shadow: 0 0 10px #F07CFF;
+}
+
+.btn-3-focus {
+  border: 4px solid #F5B5FF;
+  background-color: #F3A8FF;
+  box-shadow: 0 0 10px #F5B5FF;
+}
+
+.btn-4-focus {
+  border: 4px solid #A900BF;
+  background-color: #7A008A;
+  box-shadow: 0 0 10px #A900BF;
+}
+
 button:enabled {
   cursor: pointer;
+}
+
+/* Modais */
+
+.modal {
+  z-index: 10;
+  background-color: #f299ff;
+  position: absolute;
+  left: 490px;
+  top: 150px;
+
+  width: 400px;
+  height: 200px;
+  border-radius: 50px;
+}
+
+.modal p {
+  font-size: 1.8rem;
+  text-shadow: 2px 2px black;
+  color: white;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  font-size: 1.7rem;
+  width: 15ch;
+  padding: 1rem 0;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.modal-content button:hover {
+  cursor: pointer;
+  background-color: #43004c;
+  color: white;
+  border: 2px solid white;
 }
